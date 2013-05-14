@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Matchbox</title>
+	<title>Weather App</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css">
 	<link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css">
@@ -13,12 +13,26 @@
 	<div class="container">
 		<div class="row">
 			<header class="hero-unit">
-				<h1>Matchbox</h1>
+				<h1>Weather App</h1>
+				<p>As generic as they come!</p>
 			</header>
+		</div>
+		<div class="row">
+			<div class="span4 current-conditions">
+				<h1>Current Conditions</h1>
+			</div>
+			<div class="span4 radar">
+				<h2>RADAR Image</h2>
+				<img src="http://www.meteoradar.co.uk/Content/image.ashx?type=animated-12" alt="RADAR image from www.meteoradar.co.uk">
+			</div>
+			<div class="span4 station">
+				<h3>Station Info</h3>
+			</div>
 		</div>
 	</div>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 	<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap.js"></script>
+	<script src="js/jquery.xml2json.js"></script>
 	<script src="js/consolelog.min.js"></script>
 	<script src="js/script.js"></script>
 </body>
