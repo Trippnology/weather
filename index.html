@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<style>
-		.hero-unit { padding: 2em; }
+		.hero-unit { padding: 0.5em; }
 		.hero-unit h1 { font-size: 2em; }
 		.debug{ display: none; }
 		img { max-width: 100%; height: auto; }
@@ -22,14 +22,16 @@
 			</header>
 		</div>
 		<div class="row">
-			<div class="col-lg-4 current-conditions">
+			<div class="col-md-8 col-lg-6 radar">
+				<h2>RADAR Image</h2>
+				<a href="http://www.meteoradar.co.uk/">
+					<img src="http://www.meteoradar.co.uk/Content/image.ashx?type=animated-12" alt="RADAR image from www.meteoradar.co.uk">
+				</a>
+			</div>
+			<div class="col-sm-6 col-md-4 col-lg-4 current-conditions">
 				<h1>Current Conditions</h1>
 			</div>
-			<div class="col-lg-4 radar">
-				<h2>RADAR Image</h2>
-				<img src="http://www.meteoradar.co.uk/Content/image.ashx?type=animated-12" alt="RADAR image from www.meteoradar.co.uk">
-			</div>
-			<div class="col-lg-4 station">
+			<div class="col-sm-6 col-md-4 col-lg-4 station">
 				<h3>Station Info</h3>
 			</div>
 		</div>
