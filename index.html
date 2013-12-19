@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Weather App</title>
+	<title>Weather</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<style>
@@ -16,23 +16,28 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<header class="hero-unit">
-				<h1>Weather App</h1>
-				<p>As generic as they come!</p>
+			<header>
+				<h1 class="page-title">Weather</h1>
 			</header>
 		</div>
 		<div class="row">
-			<div class="col-md-8 col-lg-6 radar">
+			<div class="col-md-7 col-lg-6 radar">
 				<h2>RADAR Image</h2>
 				<a href="http://www.meteoradar.co.uk/">
 					<img src="http://www.meteoradar.co.uk/Content/image.ashx?type=animated-12" alt="RADAR image from www.meteoradar.co.uk">
 				</a>
 			</div>
-			<div class="col-sm-6 col-md-4 col-lg-4 current-conditions">
-				<h1>Current Conditions</h1>
+			<div class="col-sm-6 col-md-5 col-lg-3 current-conditions">
+				<h3>Current Conditions</h3>
 			</div>
-			<div class="col-sm-6 col-md-4 col-lg-4 station">
+			<div class="col-sm-6 col-md-5 col-lg-3 station">
 				<h3>Station Info</h3>
+			</div>
+			<div class="col-sm-12 col-md-5 col-lg-6 wqcam">
+				<h3>WeatherQuest Webcam</h3>
+				<a href="http://weatherquest.co.uk/">
+					<img src="http://weatherquest.co.uk/data_sets/images/webcam/cam.jpg" alt="WeatherQuest Webcam">
+				</a>
 			</div>
 		</div>
 	</div>
