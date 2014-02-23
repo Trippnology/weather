@@ -2,8 +2,11 @@
 // Set your return content type
 header('Content-type: application/xml');
 
+// ID of the station
+$stationID = $_GET['id']; // Eg IENGLAND362
+
 // Website url to open
-$daurl = 'http://api.wunderground.com/weatherstation/WXCurrentObXML.asp?ID=IENGLAND362';
+$daurl = 'http://api.wunderground.com/weatherstation/WXCurrentObXML.asp?ID=' . $stationID;
 
 // Get that website's content
 $handle = fopen($daurl, "r");
