@@ -6,19 +6,6 @@ jQuery(document).ready(function($) {
 		dataType: "xml",
 		//async: false,
 		success: function(xml) {
-			//$(xml).find('current_observation').each(function(){
-			//	var id = $(this).attr('station_id');
-			//	var title = $(this).find('title').text();
-			//	var imgurl = $(this).find('url').text();
-			//	$('<img>').attr('src': imgurl).addClass('pull-right').appendTo('.station-info');
-			//	//$('<h1></h1>').html().appendTo('.station-info');
-			//	$(this).find('desc').each(function(){
-			//		var brief = $(this).find('brief').text();
-			//		var long = $(this).find('long').text();
-			//		$('<div class="brief"></div>').html(brief).appendTo('#link_'+id);
-			//		$('<div class="long"></div>').html(long).appendTo('#link_'+id);
-			//	});
-			//});
 			var weather = $.xml2json(xml);
 
 			$('<img>').attr({src: weather.image.url, alt: 'Weather Underground logo', class: 'pull-right'}).prependTo('.station');
