@@ -17,10 +17,18 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-6">
 				<header>
 					<h1 class="page-title">Weather</h1>
 				</header>
+			</div>
+			<div class="col-md-6">
+				<p class="lead">Nearby stations</p>
+				<div class="btn-group stationpicker">
+					<button type="button" class="btn btn-default" data-stationID="IENGLAND362">Bunwell</button>
+					<button type="button" class="btn btn-default" data-stationID="IENGLAND529">Attleborough</button>
+					<button type="button" class="btn btn-default" data-stationID="INORFOLK29">Morley</button>
+				</div>
 			</div>
 		</div>
 		<div class="row">
@@ -30,12 +38,8 @@
 					<img src="http://www.meteoradar.co.uk/Content/image.ashx?type=animated-12" alt="RADAR image from www.meteoradar.co.uk">
 				</a>
 			</div>
-			<div class="col-sm-6 col-md-5 col-lg-3 current-conditions">
-				<h3>Current Conditions</h3>
-			</div>
-			<div class="col-sm-6 col-md-5 col-lg-3 station">
-				<h3>Station Info</h3>
-			</div>
+			<div class="col-sm-6 col-md-5 col-lg-3 current-conditions"></div>
+			<div class="col-sm-6 col-md-5 col-lg-3 station"></div>
 			<div class="col-sm-12 col-md-5 col-lg-6 wq">
 				<h3>WeatherQuest</h3>
 				<a href="http://weatherquest.co.uk/">
