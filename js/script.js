@@ -34,7 +34,7 @@ App.buildPage = function(xml) {
 	$('<a>').addClass('badge').attr({
 								href: 'http://maps.google.com/?ie=UTF8&hq=&ll='+weather.location.latitude+','+weather.location.longitude+'&z=13',
 								target: '_blank'})
-							.html('<i class="icon-map-marker"></i>').appendTo('.location');
+							.html('<span class="glyphicon glyphicon-map-marker"></span>').appendTo('.location');
 	$('<li>').text(weather.station_type).addClass('station_type').appendTo('.station-info');
 
 	// Build current observation
