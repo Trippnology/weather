@@ -64,6 +64,8 @@ jQuery(document).ready(function($) {
 
 	// Handle clicks on the station picker
 	$('.stationpicker').on('click', 'button', function(event) {
+		$('.stationpicker button').removeClass('active');
+		$(this).addClass('active');
 		var id = $(this).attr('data-stationID');
 		App.getWeather(id);
 	});
