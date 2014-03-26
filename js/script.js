@@ -3,7 +3,8 @@ var App = {};
 App.getWeather = function(id) {
 	$.ajax({
 		type: 'GET',
-		url: 'proxy.php?id=' + id,
+		url: 'proxy.php',
+		data: { id: id },
 		dataType: 'xml',
 		success: function(xml) {
 			App.buildPage(xml);
