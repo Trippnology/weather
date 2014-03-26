@@ -63,12 +63,13 @@ App.init = function() {
 	App.getWeather('IENGLAND362');
 
 	// Handle clicks on the station picker
-	$('.stationpicker').on('click', 'button', function(event) {
+	function stationPickerCH(event) {
 		$('.stationpicker button').removeClass('active');
 		$(this).addClass('active');
 		var id = $(this).attr('data-stationID');
 		App.getWeather(id);
-	});
-}
+	}
+	$('.stationpicker').on('click', 'button', stationPickerCH);
+};
 
 $(document).ready(App.init);
