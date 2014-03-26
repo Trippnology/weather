@@ -58,7 +58,7 @@ App.debug = function(weather) {
 	});
 };
 
-jQuery(document).ready(function($) {
+App.init = function() {
 	// Get a station on page load
 	App.getWeather('IENGLAND362');
 
@@ -69,4 +69,6 @@ jQuery(document).ready(function($) {
 		var id = $(this).attr('data-stationID');
 		App.getWeather(id);
 	});
-});
+}
+
+$(document).ready(App.init);
