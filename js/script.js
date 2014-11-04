@@ -61,7 +61,7 @@ App.debug = function(weather) {
 
 App.init = function() {
 	// Get a station on page load
-	App.getWeather('IENGLAND362');
+	App.getWeather('IENGLAND529');
 
 	// Handle clicks on the station picker
 	function stationPickerCH(event) {
