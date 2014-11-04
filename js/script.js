@@ -22,7 +22,7 @@ App.buildPage = function(xml) {
 	var weather = $.xml2json(xml);
 
 	// Clear any previous info
-	$('.current-conditions').html('<h3>Current Conditions</h3>');
+	$('.current-conditions').html('');
 	$('.station').html('<h3>Station Info</h3>');
 	$('.debug').remove();
 
