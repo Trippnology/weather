@@ -1,0 +1,15 @@
+{
+  "name": "TNG Weather",
+  "description": "Displays readings from local weather stations and provides links to other weather resources.",
+  "launch_path": "/index.html",
+  "icons": {
+    "128": "/img/icon-128.png",
+    "512": "/img/icon-512.png"
+  },
+  "developer": {
+    "name": "Rikki Tripp - Trippnology",
+    "url": "http://trippnology.com"
+  },
+  "default_locale": "en",
+  "fullscreen": true
+}

@@ -1,0 +1,12 @@
+CACHE MANIFEST
+# v1
+
+index.html
+css/bootstrap.css
+fonts/glyphicons-halflings-regular.woff
+js/jquery.min.js
+js/jquery.xml2json.js
+js/script.js
+
+NETWORK:
+*
