@@ -60,14 +60,6 @@ App.debug = function(weather) {
 };
 
 App.init = function() {
-	// Check for new version of our app
-	window.applicationCache.addEventListener('updateready', function(e) {
-		// Browser downloaded a new app cache.
-		if (confirm('A new version is available. Load it?')) {
-			window.location.reload();
-		}
-	});
-
 	// Get a station on page load
 	App.getWeather('IENGLAND529');
 
@@ -79,6 +71,14 @@ App.init = function() {
 		App.getWeather(id);
 	}
 	$('.stationpicker').on('click', 'button', stationPickerCH);
+
+	// Check for new version of our app
+	window.applicationCache.addEventListener('updateready', function(e) {
+		// Browser downloaded a new app cache.
+		if (confirm('A new version is available. Load it?')) {
+			window.location.reload();
+		}
+	});
 };
 
 $(document).ready(App.init);
