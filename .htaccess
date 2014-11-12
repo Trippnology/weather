@@ -201,8 +201,8 @@ AddDefaultCharset utf-8
   # Manifest files
     ExpiresByType application/manifest+json             "access plus 1 year"
 
-    ExpiresByType application/x-web-app-manifest+json   "access"
-    ExpiresByType text/cache-manifest                   "access"
+    ExpiresByType application/x-web-app-manifest+json   "access plus 0 seconds"
+    ExpiresByType text/cache-manifest                   "access plus 0 seconds"
 
   # Media files
     ExpiresByType audio/ogg                             "access plus 1 month"
