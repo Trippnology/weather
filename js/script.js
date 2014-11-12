@@ -72,13 +72,14 @@ App.init = function() {
 	}
 	$('.stationpicker').on('click', 'button', stationPickerCH);
 
-	// Check for new version of our app
-	window.applicationCache.addEventListener('updateready', function(e) {
-		// Browser downloaded a new app cache
-		if (confirm('A new version is available. Load it?')) {
-			window.location.reload();
-		}
-	});
 };
 
 $(document).ready(App.init);
+
+// Check for new version of our app
+window.applicationCache.addEventListener('updateready', function(e) {
+	// Browser downloaded a new app cache
+	if (confirm('A new version is available. Load it?')) {
+		window.location.reload();
+	}
+});
