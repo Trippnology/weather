@@ -41,9 +41,10 @@ App.buildPage = function(xml) {
 	// Build current observation
 	$('<ul class="current-observation list-unstyled"></ul>').appendTo('.current-conditions');
 	$('<li>').text(weather.observation_time_rfc822).appendTo('.current-observation');
-	$('<li>').text(weather.temperature_string).addClass('badge').appendTo('.current-observation');
-	$('<li>').text(weather.pressure_string).addClass('badge').appendTo('.current-observation');
-	$('<li>').text('Rain today: '+weather.precip_today_string).appendTo('.current-observation');
+	$('<li>').text('Temp: '+weather.temp_c+'c').appendTo('.current-observation');
+	$('<li>').text('Dew Point: '+weather.dewpoint_c+'c').appendTo('.current-observation');
+	$('<li>').text('Pressure: '+weather.pressure_mb+'mb').appendTo('.current-observation');
+	$('<li>').text('Rain today: '+weather.precip_today_metric).appendTo('.current-observation');
 	$('<li>').text('Wind: '+weather.wind_string).appendTo('.current-observation');
 	$('<a>').attr({href:weather.ob_url}).text('Forecast').appendTo('.current-conditions');
 
