@@ -1,12 +1,13 @@
 CACHE MANIFEST
-# v8
-
-index.html
-css/bootstrap.css
-fonts/glyphicons-halflings-regular.woff
-js/jquery.min.js
-js/jquery.xml2json.js
-js/script.js
+# v9
 
 NETWORK:
 *
+
+CACHE:
+index.html
+http://cdn.trippnology.net/css/bootstrap.min.css
+http://cdn.trippnology.net/fonts/glyphicons-halflings-regular.woff
+http://cdn.trippnology.net/js/jquery.min.js
+js/jquery.xml2json.js
+js/script.js
