@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# v0.2.1
+# v0.2.2
 
 NETWORK:
 *
@@ -11,3 +11,5 @@ http://cdn.trippnology.net/fonts/glyphicons-halflings-regular.woff
 http://cdn.trippnology.net/js/jquery.min.js
 js/jquery.xml2json.js
 js/script.js
+img/icon-128.png
+img/icon-512.png
