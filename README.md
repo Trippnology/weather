@@ -1,4 +1,4 @@
-# Weather v0.2.1
+# Weather
 Minimal page showing info from a local weather station. Built for mobile use.
 
 ## Includes
