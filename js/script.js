@@ -56,7 +56,7 @@ App.debug = function(weather) {
 	$('<div>').addClass('debug').html('<h3>Debug info</h3>').appendTo('.container');
 	$('<ul>').addClass('everything').appendTo('div.debug');
 	$.each(weather, function(key, val){
-		$('<li>').html('<span class="">'+key+':</span> <span class="">'+val+'</span>').appendTo('.everything');					
+		$('<li>').html('<span class="">'+key+':</span> <span class="">'+val+'</span>').appendTo('.everything');
 	});
 };
 
@@ -72,6 +72,11 @@ App.init = function() {
 		App.getWeather(id);
 	}
 	$('.stationpicker').on('click', 'button', stationPickerCH);
+
+	// Load higher quality RADAR image o demand
+	$('#load-radar-iframe').on('click', function () {
+		$('.radar').html('<iframe src="http://maps.meteoradar.co.uk/GratisRadar/947/831/actueel?zoom=6" width="100%" height="500" scrolling="no" frameborder="no"></iframe>');
+	});
 
 	// Check for new version of our app
 	window.applicationCache.addEventListener('updateready', function(e) {
