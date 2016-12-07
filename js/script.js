@@ -38,15 +38,27 @@ App.buildPage = function(xml) {
 							.html('<span class="glyphicon glyphicon-map-marker"></span>').appendTo('.location');
 	$('<li>').text(weather.station_type).addClass('station_type').appendTo('.station-info');
 
+	// Format a row of data
+	function makeRow (title, data) {
+		var $row = $('<tr>');
+		var $title = $('<th>').text(title).appendTo($row);
+		var $data = $('<td>').text(data).appendTo($row);
+		return $row;
+	}
+
 	// Build current observation
-	$('<ul class="current-observation list-unstyled"></ul>').appendTo('.current-conditions');
-	$('<li>').text(weather.observation_time_rfc822).appendTo('.current-observation');
-	$('<li>').text('Temp: '+weather.temp_c+'c').appendTo('.current-observation');
-	$('<li>').text('Humidity: '+weather.relative_humidity+'%').appendTo('.current-observation');
-	$('<li>').text('Dew Point: '+weather.dewpoint_c+'c').appendTo('.current-observation');
-	$('<li>').text('Pressure: '+weather.pressure_mb+'mb').appendTo('.current-observation');
-	$('<li>').text('Rain today: '+weather.precip_today_metric).appendTo('.current-observation');
-	$('<li>').text('Wind: '+weather.wind_string).appendTo('.current-observation');
+	var $table = $('<table class="table table-condensed">');
+
+	$table.append(makeRow('Updated:', weather.observation_time_rfc822));
+	$table.append(makeRow('Temp:', weather.temp_c+'c'));
+	$table.append(makeRow('Humidity:', weather.relative_humidity+'%'));
+	$table.append(makeRow('Dew Point:', weather.dewpoint_c+'c'));
+	$table.append(makeRow('Pressure:', weather.pressure_mb+'mb'));
+	$table.append(makeRow('Rain Today:', weather.precip_today_metric));
+	$table.append(makeRow('Wind:', weather.wind_string));
+
+	$table.appendTo('.current-conditions');
+
 	$('<a>').attr({href:weather.ob_url}).text('Forecast').appendTo('.current-conditions');
 
 	// Print everything we've got in the json
