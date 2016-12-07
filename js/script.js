@@ -42,6 +42,7 @@ App.buildPage = function(xml) {
 	$('<ul class="current-observation list-unstyled"></ul>').appendTo('.current-conditions');
 	$('<li>').text(weather.observation_time_rfc822).appendTo('.current-observation');
 	$('<li>').text('Temp: '+weather.temp_c+'c').appendTo('.current-observation');
+	$('<li>').text('Humidity: '+weather.relative_humidity+'%').appendTo('.current-observation');
 	$('<li>').text('Dew Point: '+weather.dewpoint_c+'c').appendTo('.current-observation');
 	$('<li>').text('Pressure: '+weather.pressure_mb+'mb').appendTo('.current-observation');
 	$('<li>').text('Rain today: '+weather.precip_today_metric).appendTo('.current-observation');
