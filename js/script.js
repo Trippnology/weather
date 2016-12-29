@@ -100,9 +100,19 @@ App.init = function() {
 		}).appendTo($a);
 		$('#load-lightning-image').replaceWith($a);
 	});
-	// Load lightning image by default on larger screens
+	// Load the weatherquest webcam on demand
+	$('#load-wq-image').on('click', function () {
+		var $a = $('<a>').attr('href', 'http://weatherquest.co.uk/');
+		$('<img>').attr({
+			src: 'http://weatherquest.co.uk/data_sets/images/webcam/cam.jpg',
+			alt: "A view from Weather Quest's headquarters at the UEA"
+		}).appendTo($a);
+		$('#load-wq-image').replaceWith($a);
+	});
+	// Load images by default on larger screens
 	if ($(window).width() >= 992) {
 		$('#load-lightning-image').trigger('click');
+		$('#load-wq-image').trigger('click');
 	}
 
 	// Check for new version of our app
