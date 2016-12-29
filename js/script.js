@@ -86,10 +86,24 @@ App.init = function() {
 	}
 	$('.stationpicker').on('click', 'button', stationPickerCH);
 
-	// Load higher quality RADAR image o demand
+	// Load higher quality RADAR image on demand
 	$('#load-radar-iframe').on('click', function () {
 		$('.radar').html('<iframe src="http://maps.meteoradar.co.uk/GratisRadar/947/831/actueel?zoom=6" width="100%" height="500" scrolling="no" frameborder="no"></iframe>');
 	});
+
+	// Load lightning image on demand
+	$('#load-lightning-image').on('click', function () {
+		var $a = $('<a>').attr('href', 'http://en.blitzortung.org/live_lightning_maps.php?map=12');
+		$('<img>').attr({
+			src: 'http://images.blitzortung.org/Images/image_b_uk.png',
+			alt: 'Map of lightning strikes over the UK in the last 120 minutes'
+		}).appendTo($a);
+		$('#load-lightning-image').replaceWith($a);
+	});
+	// Load lightning image by default on larger screens
+	if ($(window).width() >= 992) {
+		$('#load-lightning-image').trigger('click');
+	}
 
 	// Check for new version of our app
 	window.applicationCache.addEventListener('updateready', function(e) {
