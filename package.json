@@ -1,0 +1,26 @@
+{
+  "name": "tng-weather",
+  "version": "0.1.0",
+  "description": "Displays readings from local weather stations and provides links to other weather resources.",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "0.9.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Trippnology/weather.git"
+  },
+  "keywords": [
+    "weather"
+  ],
+  "author": "Rikki Tripp - Trippnology",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Trippnology/weather/issues"
+  },
+  "homepage": "https://github.com/Trippnology/weather#readme"
+}
