@@ -12,7 +12,8 @@ App.getWeather = function(id) {
 		error: function(error) {
 			App.debug();
 			$('.debug').html('<p>Something went wrong. :(</p>').addClass('label label-important');
-			console.log('Error: '+error);
+			console.log('Error fetching weather data:');
+			console.error(error);
 		}
 	});
 };
