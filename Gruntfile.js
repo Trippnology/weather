@@ -13,7 +13,7 @@ module.exports = function (grunt) {
         browserify: {
             dist: {
                 options: {
-                    //transform: ['browserify-shim']
+                    transform: ['browserify-shim']
                 },
                 files: {
                     'js/script-bundle.js': 'js/script.js'
