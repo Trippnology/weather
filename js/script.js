@@ -12,7 +12,8 @@ App.getWeather = function(id) {
 		error: function(error) {
 			App.debug();
 			$('.debug').html('<p>Something went wrong. :(</p>').addClass('label label-important');
-			console.log('Error: '+error);
+			console.log('Error fetching weather data:');
+			console.error(error);
 		}
 	});
 };
@@ -120,6 +121,17 @@ App.init = function() {
 		// Browser downloaded a new app cache
 		window.location.reload();
 	});
+
+	// Register our service worker
+	if (navigator.serviceWorker) {
+		navigator.serviceWorker.register('sw.js', {scope: './'}).then(function(registration) {
+			// Registration was successful
+			console.log('ServiceWorker registration successful with scope: ', registration.scope);
+		}).catch(function(err) {
+			// registration failed :(
+			console.log('ServiceWorker registration failed: ', err);
+		});
+	}
 };
 
 $(document).ready(App.init);
