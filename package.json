@@ -5,6 +5,9 @@
   "main": "index.html",
   "dependencies": {},
   "devDependencies": {
+    "browserify-shim": "3.8.12",
+    "grunt": "1.0.1",
+    "grunt-browserify": "5.0.0",
     "http-server": "0.9.0"
   },
   "scripts": {
@@ -22,5 +25,15 @@
   "bugs": {
     "url": "https://github.com/Trippnology/weather/issues"
   },
-  "homepage": "https://github.com/Trippnology/weather#readme"
+  "homepage": "https://github.com/Trippnology/weather#readme",
+  "browser": {
+    "jquery": "./js/jquery-1.12.1.min.js",
+    "xml2json": "./js/jquery.xml2json.js"
+  },
+  "browserify-shim": {
+    "jquery": "$",
+    "xml2json": {
+      "depends": ["jquery"]
+    }
+  }
 }

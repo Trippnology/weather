@@ -1,3 +1,6 @@
+global.jQuery = require('jquery');
+require('xml2json');
+
 var App = {};
 
 App.getWeather = function(id) {
@@ -135,3 +138,5 @@ App.init = function() {
 };
 
 $(document).ready(App.init);
+
+module.exports = App;
