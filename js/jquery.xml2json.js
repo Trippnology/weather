@@ -1,14 +1,15 @@
 /*
- ### jQuery XML to JSON Plugin v1.3 - 2013-02-18 ###
+ * ### jQuery XML to JSON Plugin v1.3 - 2013-02-18 ###
  * http://www.fyneworks.com/ - diego@fyneworks.com
-  * Licensed under http://en.wikipedia.org/wiki/MIT_License
- ###
- Website: http://www.fyneworks.com/jquery/xml-to-json/
-*//*
- # INSPIRED BY: http://www.terracoder.com/
-           AND: http://www.thomasfrank.se/xml_to_json.html
-           AND: http://www.kawa.net/works/js/xml/objtree-e.html
-*//*
+ * Licensed under http://en.wikipedia.org/wiki/MIT_License
+ * Website: http://www.fyneworks.com/jquery/xml-to-json/
+ *
+ * # INSPIRED BY: http://www.terracoder.com/
+             AND: http://www.thomasfrank.se/xml_to_json.html
+             AND: http://www.kawa.net/works/js/xml/objtree-e.html
+*/
+
+/*
  This simple script converts XML (document of code) into a JSON object. It is the combination of 2
  'xml to json' great parsers (see below) which allows for both 'simple' and 'extended' parsing modes.
 */
