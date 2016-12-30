@@ -5,6 +5,8 @@
   "main": "index.html",
   "dependencies": {},
   "devDependencies": {
+    "grunt": "1.0.1",
+    "grunt-browserify": "5.0.0",
     "http-server": "0.9.0"
   },
   "scripts": {
