@@ -28,7 +28,7 @@ App.buildPage = function(xml) {
 	$('.debug').remove();
 
 	// Build station info
-	$('<img>').attr({src: weather.image.url, alt: 'Weather Underground logo', class: 'pull-right'}).prependTo('.station');
+	$('<img>').attr({src: 'proxy.php?file=wg-logo', alt: 'Weather Underground logo', class: 'pull-right'}).prependTo('.station');
 	$('<ul class="station-info list-unstyled"></ul>').appendTo('.station');
 	$('<li>').html('<a href="'+weather.history_url+'" target="blank">'+weather.station_id+'</a>').addClass('station_id').appendTo('.station-info');
 	// TODO Map link needs improving.
@@ -96,7 +96,7 @@ App.init = function() {
 	$('#load-lightning-image').on('click', function () {
 		var $a = $('<a>').attr('href', 'http://en.blitzortung.org/live_lightning_maps.php?map=12');
 		$('<img>').attr({
-			src: 'http://images.blitzortung.org/Images/image_b_uk.png',
+			src: 'proxy.php?file=lightning',
 			alt: 'Map of lightning strikes over the UK in the last 120 minutes'
 		}).appendTo($a);
 		$('#load-lightning-image').replaceWith($a);
@@ -105,7 +105,7 @@ App.init = function() {
 	$('#load-wq-image').on('click', function () {
 		var $a = $('<a>').attr('href', 'http://weatherquest.co.uk/');
 		$('<img>').attr({
-			src: 'http://weatherquest.co.uk/data_sets/images/webcam/cam.jpg',
+			src: 'proxy.php?file=wq-cam',
 			alt: "A view from Weather Quest's headquarters at the UEA"
 		}).appendTo($a);
 		$('#load-wq-image').replaceWith($a);
