@@ -15,7 +15,7 @@ return b?(parseFloat(Sa(a,"marginLeft"))||(n.contains(a.ownerDocument,a)?a.getBo
 },{}],2:[function(require,module,exports){
 (function (global){
 
-; require("D:\\WWW\\projects\\weatherapp\\js\\jquery-1.12.1.min.js");
+; require("D:\\www\\projects\\weatherapp\\js\\jquery-1.12.1.min.js");
 ; var __browserify_shim_require__=require;(function browserifyShim(module, define, require) {
 /*
  * ### jQuery XML to JSON Plugin v1.3 - 2013-02-18 ###
@@ -215,7 +215,7 @@ return b?(parseFloat(Sa(a,"marginLeft"))||(n.contains(a.ownerDocument,a)?a.getBo
 }).call(global, module, undefined, undefined);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"D:\\WWW\\projects\\weatherapp\\js\\jquery-1.12.1.min.js":1}],3:[function(require,module,exports){
+},{"D:\\www\\projects\\weatherapp\\js\\jquery-1.12.1.min.js":1}],3:[function(require,module,exports){
 (function (global){
 global.jQuery = require('jquery');
 require('xml2json');
@@ -274,6 +274,7 @@ App.buildPage = function(xml) {
 
 	$table.append(makeRow('Updated:', weather.observation_time_rfc822));
 	$table.append(makeRow('Temp:', weather.temp_c+'c'));
+	$table.append(makeRow('Windchill:', (weather.windchill_c ? weather.windchill_c+'c' : 'None')));
 	$table.append(makeRow('Humidity:', weather.relative_humidity+'%'));
 	$table.append(makeRow('Dew Point:', weather.dewpoint_c+'c'));
 	$table.append(makeRow('Pressure:', weather.pressure_mb+'mb'));
