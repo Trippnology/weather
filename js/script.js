@@ -55,6 +55,7 @@ App.buildPage = function(xml) {
 
 	$table.append(makeRow('Updated:', weather.observation_time_rfc822));
 	$table.append(makeRow('Temp:', weather.temp_c+'c'));
+	$table.append(makeRow('Windchill:', (weather.windchill_c ? weather.windchill_c+'c' : 'None')));
 	$table.append(makeRow('Humidity:', weather.relative_humidity+'%'));
 	$table.append(makeRow('Dew Point:', weather.dewpoint_c+'c'));
 	$table.append(makeRow('Pressure:', weather.pressure_mb+'mb'));
