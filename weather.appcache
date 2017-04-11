@@ -1,15 +1,7 @@
 CACHE MANIFEST
-# v0.5.0
+# v1.2.2
 
 NETWORK:
 *
 
 CACHE:
-index.html
-http://cdn.trippnology.net/css/bootstrap-3.3.6.min.css
-http://cdn.trippnology.net/fonts/glyphicons-halflings-regular.woff
-http://cdn.trippnology.net/js/jquery-1.12.1.min.js
-js/jquery.xml2json.js
-js/script.js
-img/icon-128.png
-img/icon-512.png
