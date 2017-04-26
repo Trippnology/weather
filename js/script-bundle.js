@@ -15,7 +15,7 @@ return b?(parseFloat(Sa(a,"marginLeft"))||(n.contains(a.ownerDocument,a)?a.getBo
 },{}],2:[function(require,module,exports){
 (function (global){
 
-; require("D:\\www\\projects\\weatherapp\\js\\jquery-1.12.1.min.js");
+; require("D:\\WWW\\projects\\weatherapp\\js\\jquery-1.12.1.min.js");
 ; var __browserify_shim_require__=require;(function browserifyShim(module, define, require) {
 /*
  * ### jQuery XML to JSON Plugin v1.3 - 2013-02-18 ###
@@ -215,7 +215,7 @@ return b?(parseFloat(Sa(a,"marginLeft"))||(n.contains(a.ownerDocument,a)?a.getBo
 }).call(global, module, undefined, undefined);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"D:\\www\\projects\\weatherapp\\js\\jquery-1.12.1.min.js":1}],3:[function(require,module,exports){
+},{"D:\\WWW\\projects\\weatherapp\\js\\jquery-1.12.1.min.js":1}],3:[function(require,module,exports){
 (function (global){
 global.jQuery = require('jquery');
 require('xml2json');
@@ -312,7 +312,8 @@ App.init = function() {
 
 	// Load higher quality RADAR image on demand
 	$('#load-radar-iframe').on('click', function () {
-		$('.radar').html('<iframe src="http://maps.meteoradar.co.uk/GratisRadar/947/831/actueel?zoom=6" width="100%" height="500" scrolling="no" frameborder="no"></iframe>');
+		//$('.radar').html('<iframe src="http://maps.meteoradar.co.uk/GratisRadar/947/831/actueel?zoom=6" width="100%" height="500" scrolling="no" frameborder="no"></iframe>');
+		$('.radar').html('<a href="http://meteociel.fr/observations-meteo/radar2.php?region=uk"><img src="http://meteociel.fr/cartes_obs/radar/lastradar_uk.gif" alt="RADAR view of precipitation over the UK"></a>');
 	});
 
 	// Load lightning image on demand
