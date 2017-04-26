@@ -26,6 +26,10 @@ if ($file) {
 			$url = 'http://pda.meteox.co.uk/images.aspx?jaar=-3&voor=&soort=loop3uur256&c=total&n=';
 			header('Content-Type: image/gif');
 			break;
+		case 'radar2':
+			$url = 'http://meteociel.fr/observations-meteo/radar2.php?region=uk';
+			header('Content-Type: image/gif');
+			break;
 		case 'wg-logo':
 			$url = 'http://icons.wunderground.com/graphics/bh-wui_logo.gif';
 			header('Content-Type: image/gif');
