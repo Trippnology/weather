@@ -22,6 +22,7 @@ TODO: Write usage instructions
 
 ## History
 
+* v1.2.3 - Testing alternate RADAR image
 * v1.2.2 - Restored an empty appcache to clear caches before depreciating.
 * v1.2.0 - Added basic service worker.
 * v1.1.0 - Bundle some JS together.
