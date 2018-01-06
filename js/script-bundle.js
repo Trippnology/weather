@@ -295,17 +295,6 @@ App.debug = function(weather) {
 };
 
 App.init = function() {
-	// Get a station on page load
-	App.getWeather($('button.active').data('stationid'), function (error, weather) {
-		if (error) {
-			App.debug();
-			$('.debug').html('<p>Something went wrong. :(</p>').addClass('label label-important');
-			console.log('Error fetching weather data:');
-			console.error(error);
-			return;
-		}
-		App.buildPage(weather);
-	});
 
 	// Handle clicks on the station picker
 	$('.stationpicker').on('click', 'button', function (event) {
@@ -348,6 +337,20 @@ App.init = function() {
 		}).appendTo($a);
 		$('#load-wq-image').replaceWith($a);
 	});
+};
+
+App.loaded = function () {
+	// Get a station on page load
+	App.getWeather($('button.active').data('stationid'), function (error, weather) {
+		if (error) {
+			App.debug();
+			$('.debug').html('<p>Something went wrong. :(</p>').addClass('label label-important');
+			console.log('Error fetching weather data:');
+			console.error(error);
+			return;
+		}
+		App.buildPage(weather);
+	});
 	// Load images by default on larger screens
 	if ($(window).width() >= 992) {
 		$('#load-lightning-image').trigger('click');
@@ -373,6 +376,7 @@ App.init = function() {
 };
 
 $(document).ready(App.init);
+$(window).load(App.loaded);
 
 module.exports = App;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
