@@ -10,7 +10,7 @@ self.addEventListener('install', function(event) {
 	// long install takes, and if it failed
 	event.waitUntil(
 		// We open a cache…
-		caches.open('tng-weather-v4').then(function(cache) {
+		caches.open('tng-weather-v1.3.1').then(function(cache) {
 			// And add resources to it
 			return cache.addAll([
 				//'./',
@@ -21,7 +21,7 @@ self.addEventListener('install', function(event) {
 				//'http://cdn.trippnology.net/fonts/glyphicons-halflings-regular.woff',
 				//'http://cdn.trippnology.net/js/jquery-1.12.1.min.js',
 				'js/jquery.xml2json.js',
-				'js/script.js',
+				'js/script-bundle.js',
 				'img/icon-128.png',
 				'img/icon-512.png'
 			]);
