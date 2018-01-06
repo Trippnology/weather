@@ -108,6 +108,16 @@ App.init = function() {
 		}).appendTo($a);
 		$('#load-lightning-image').replaceWith($a);
 	});
+	// Load the weatherquest podcast on demand
+	$('#load-wq-podcast').on('click', function () {
+		var $audio = $('<audio>').attr({
+			src: 'proxy.php?file=podcast',
+			controls: true
+		});
+		// Fallback link for browsers that don't support <audio>
+		var $a = $('<a>').attr('href', 'http://www.weatherquest.co.uk/data_sets/podcast/norfolk.mp3').text('Podcast').appendTo($audio);
+		$('#load-wq-podcast').replaceWith($audio);
+	});
 	// Load the weatherquest webcam on demand
 	$('#load-wq-image').on('click', function () {
 		var $a = $('<a>').attr('href', 'http://weatherquest.co.uk/');

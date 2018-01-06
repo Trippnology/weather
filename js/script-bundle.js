@@ -315,7 +315,6 @@ App.init = function() {
 
 	// Load higher quality RADAR image on demand
 	$('#load-radar-iframe').on('click', function () {
-		//$('.radar').html('<iframe src="http://maps.meteoradar.co.uk/GratisRadar/947/831/actueel?zoom=6" width="100%" height="500" scrolling="no" frameborder="no"></iframe>');
 		$('.radar').html('<a href="http://meteociel.fr/observations-meteo/radar2.php?region=uk"><img src="proxy.php?file=radar2" alt="RADAR view of precipitation over the UK"></a>');
 	});
 
@@ -327,6 +326,16 @@ App.init = function() {
 			alt: 'Map of lightning strikes over the UK in the last 120 minutes'
 		}).appendTo($a);
 		$('#load-lightning-image').replaceWith($a);
+	});
+	// Load the weatherquest podcast on demand
+	$('#load-wq-podcast').on('click', function () {
+		var $audio = $('<audio>').attr({
+			src: 'proxy.php?file=podcast',
+			controls: true
+		});
+		// Fallback link for browsers that don't support <audio>
+		var $a = $('<a>').attr('href', 'http://www.weatherquest.co.uk/data_sets/podcast/norfolk.mp3').text('Podcast').appendTo($audio);
+		$('#load-wq-podcast').replaceWith($audio);
 	});
 	// Load the weatherquest webcam on demand
 	$('#load-wq-image').on('click', function () {
