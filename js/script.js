@@ -3,27 +3,24 @@ require('xml2json');
 
 var App = {};
 
-App.getWeather = function(id) {
+App.getWeather = function(id, cb) {
 	$.ajax({
 		type: 'GET',
 		url: 'proxy.php',
 		data: { id: id },
 		dataType: 'xml',
 		success: function(xml) {
-			App.buildPage(xml);
+			// Convert our xml to json
+			var weather = $.xml2json(xml);
+			return cb(null, weather);
 		},
 		error: function(error) {
-			App.debug();
-			$('.debug').html('<p>Something went wrong. :(</p>').addClass('label label-important');
-			console.log('Error fetching weather data:');
-			console.error(error);
+			return cb(error);
 		}
 	});
 };
 
-App.buildPage = function(xml) {
-	// Convert our xml to json
-	var weather = $.xml2json(xml);
+App.buildPage = function(weather) {
 
 	// Clear any previous info
 	$('.current-conditions').html('');
@@ -80,16 +77,33 @@ App.debug = function(weather) {
 
 App.init = function() {
 	// Get a station on page load
-	App.getWeather($('button.active').data('stationid'));
+	App.getWeather($('button.active').data('stationid'), function (error, weather) {
+		if (error) {
+			App.debug();
+			$('.debug').html('<p>Something went wrong. :(</p>').addClass('label label-important');
+			console.log('Error fetching weather data:');
+			console.error(error);
+			return;
+		}
+		App.buildPage(weather);
+	});
 
 	// Handle clicks on the station picker
-	function stationPickerCH(event) {
+	$('.stationpicker').on('click', 'button', function (event) {
 		$('.stationpicker button').removeClass('active');
 		$(this).addClass('active');
 		var id = $(this).attr('data-stationID');
-		App.getWeather(id);
-	}
-	$('.stationpicker').on('click', 'button', stationPickerCH);
+		App.getWeather(id, function (error, weather) {
+			if (error) {
+				App.debug();
+				$('.debug').html('<p>Something went wrong. :(</p>').addClass('label label-important');
+				console.log('Error fetching weather data:');
+				console.error(error);
+				return;
+			}
+			App.buildPage(weather);
+		});
+	});
 
 	// Load higher quality RADAR image on demand
 	$('#load-radar-iframe').on('click', function () {

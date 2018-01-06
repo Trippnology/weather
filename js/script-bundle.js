@@ -15,7 +15,7 @@ return b?(parseFloat(Sa(a,"marginLeft"))||(n.contains(a.ownerDocument,a)?a.getBo
 },{}],2:[function(require,module,exports){
 (function (global){
 
-; require("D:\\WWW\\projects\\weatherapp\\js\\jquery-1.12.1.min.js");
+; require("D:\\www\\projects\\weatherapp\\js\\jquery-1.12.1.min.js");
 ; var __browserify_shim_require__=require;(function browserifyShim(module, define, require) {
 /*
  * ### jQuery XML to JSON Plugin v1.3 - 2013-02-18 ###
@@ -215,34 +215,31 @@ return b?(parseFloat(Sa(a,"marginLeft"))||(n.contains(a.ownerDocument,a)?a.getBo
 }).call(global, module, undefined, undefined);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"D:\\WWW\\projects\\weatherapp\\js\\jquery-1.12.1.min.js":1}],3:[function(require,module,exports){
+},{"D:\\www\\projects\\weatherapp\\js\\jquery-1.12.1.min.js":1}],3:[function(require,module,exports){
 (function (global){
 global.jQuery = require('jquery');
 require('xml2json');
 
 var App = {};
 
-App.getWeather = function(id) {
+App.getWeather = function(id, cb) {
 	$.ajax({
 		type: 'GET',
 		url: 'proxy.php',
 		data: { id: id },
 		dataType: 'xml',
 		success: function(xml) {
-			App.buildPage(xml);
+			// Convert our xml to json
+			var weather = $.xml2json(xml);
+			return cb(null, weather);
 		},
 		error: function(error) {
-			App.debug();
-			$('.debug').html('<p>Something went wrong. :(</p>').addClass('label label-important');
-			console.log('Error fetching weather data:');
-			console.error(error);
+			return cb(error);
 		}
 	});
 };
 
-App.buildPage = function(xml) {
-	// Convert our xml to json
-	var weather = $.xml2json(xml);
+App.buildPage = function(weather) {
 
 	// Clear any previous info
 	$('.current-conditions').html('');
@@ -299,21 +296,38 @@ App.debug = function(weather) {
 
 App.init = function() {
 	// Get a station on page load
-	App.getWeather($('button.active').data('stationid'));
+	App.getWeather($('button.active').data('stationid'), function (error, weather) {
+		if (error) {
+			App.debug();
+			$('.debug').html('<p>Something went wrong. :(</p>').addClass('label label-important');
+			console.log('Error fetching weather data:');
+			console.error(error);
+			return;
+		}
+		App.buildPage(weather);
+	});
 
 	// Handle clicks on the station picker
-	function stationPickerCH(event) {
+	$('.stationpicker').on('click', 'button', function (event) {
 		$('.stationpicker button').removeClass('active');
 		$(this).addClass('active');
 		var id = $(this).attr('data-stationID');
-		App.getWeather(id);
-	}
-	$('.stationpicker').on('click', 'button', stationPickerCH);
+		App.getWeather(id, function (error, weather) {
+			if (error) {
+				App.debug();
+				$('.debug').html('<p>Something went wrong. :(</p>').addClass('label label-important');
+				console.log('Error fetching weather data:');
+				console.error(error);
+				return;
+			}
+			App.buildPage(weather);
+		});
+	});
 
 	// Load higher quality RADAR image on demand
 	$('#load-radar-iframe').on('click', function () {
 		//$('.radar').html('<iframe src="http://maps.meteoradar.co.uk/GratisRadar/947/831/actueel?zoom=6" width="100%" height="500" scrolling="no" frameborder="no"></iframe>');
-		$('.radar').html('<a href="http://meteociel.fr/observations-meteo/radar2.php?region=uk"><img src="http://meteociel.fr/cartes_obs/radar/lastradar_uk.gif" alt="RADAR view of precipitation over the UK"></a>');
+		$('.radar').html('<a href="http://meteociel.fr/observations-meteo/radar2.php?region=uk"><img src="proxy.php?file=radar2" alt="RADAR view of precipitation over the UK"></a>');
 	});
 
 	// Load lightning image on demand
