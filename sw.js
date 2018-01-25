@@ -10,7 +10,7 @@ self.addEventListener('install', function(event) {
 	// long install takes, and if it failed
 	event.waitUntil(
 		// We open a cache…
-		caches.open('tng-weather-v1.3.1').then(function(cache) {
+		caches.open('tng-weather-v1.3.2').then(function(cache) {
 			// And add resources to it
 			return cache.addAll([
 				//'./',
