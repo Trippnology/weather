@@ -1,6 +1,6 @@
 {
   "name": "tng-weather",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "Displays readings from local weather stations and provides links to other weather resources.",
   "main": "index.html",
   "dependencies": {},
