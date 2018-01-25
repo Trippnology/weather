@@ -27,7 +27,8 @@ if ($file) {
 			header('Content-Type: image/gif');
 			break;
 		case 'radar2':
-			$url = 'http://meteociel.fr/observations-meteo/radar2.php?region=uk';
+			//$url = 'http://meteociel.fr/observations-meteo/radar2.php?region=uk';
+			$url = 'https://www.meteociel.fr/cartes_obs/radar/lastradar_uk.gif';
 			header('Content-Type: image/gif');
 			break;
 		case 'wg-logo':
